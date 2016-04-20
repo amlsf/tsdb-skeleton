@@ -31,5 +31,5 @@ Signatures for all the implementations you need to do are provided to you in the
 - the primary key, which must be unique, is called `pk`
 - `self.rows` contains all the rows. This is a dictionary with keys the primary keys
 - `self.index` is a dictionary. The keys are the indexed fields. The values are the index for each field.
-- The index itself is an inverse-lookup dictionary. Say a field `f` has values 1,9,33,1 in pks 1,2,3,4. Then self.index['f']={1:[1,4], 2:[9], 3:[33]}.
+- The index itself is an inverse-lookup dictionary. Say a field `f` has values 1,9,33,1 in pks 1,2,3,4. Then self.index['f']={1:[1,4], 9:[2], 33:[3]}.
 - Notice that we `update_indices` on all database changing operations. Here these are `insert_ts` and `upsert_meta`. You must implement the latter. You must also implement the `select` function.
